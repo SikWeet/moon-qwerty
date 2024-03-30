@@ -1,0 +1,252 @@
+* {
+	--password-background: #e9edfc27;
+	--password-shadow: #e9edfc;
+	--password-background-sun: #cfcfad27;
+	--password-shadow-sun: #b2b890;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background-repeat: no-repeat;
+	background-size: 300px;
+	background-position-x: center;
+	font-family: "Roboto", sans-serif;
+}
+
+body.moon {
+	/* background-image: url(./images/moo.png); */
+	background-color: #09090a;
+	color: #c9cee2;
+}
+
+body.sun {
+	background-color: #f0f1ea;
+	color: #6d744f;
+}
+
+a {
+	color: #c9cee2;
+	text-decoration: unset;
+	transition: color .3s ease;
+}
+
+a:hover,
+a:active,
+a:focus {
+	color: #a9b6eb;
+}
+
+body.sun a {
+	color: #6d744f;
+}
+
+body.sun a:hover,
+body.sun a:active,
+body.sun a:focus {
+	color: #ceda98;
+}
+
+.timestamp {
+	text-align: center;
+}
+
+.timestamp img {
+	animation: moon 20s infinite linear;
+	margin-bottom: 40px;
+}
+
+.timestamp img {
+	animation: sun 20s infinite linear;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	/* color: #c9cee2; */
+}
+
+#passwords {
+	margin: auto;
+	width: 50%;
+}
+
+.password {
+	margin-bottom: 20px;
+	padding: 5px;
+	border-radius: 8px;
+	background-color: var(--password-background);
+	box-shadow: inset 0 0 5px 3px var(--password-shadow);
+	backdrop-filter: blur(50px);
+}
+
+body.sun .password {
+	background-color: var(--password-background-sun);
+	box-shadow: inset 0 0 5px 3px var(--password-shadow-sun);
+}
+
+.info {
+	display: flex;
+	/* justify-content: space-between; */
+	margin-bottom: 10px;
+}
+
+.info h6,
+.info .components {
+	position: relative;
+	width: calc(100% / 3);
+	text-align: center;
+	overflow: hidden;
+}
+
+
+.content {
+	display: flex;
+	justify-content: space-between;
+}
+
+.components i {
+	cursor: pointer;
+	padding: 4px;
+	/* padding: 0 2px 0 2px; */
+}
+
+.content input {
+	position: relative;
+	max-width: calc(100% / 2.1);
+	text-align: center;
+	box-shadow: inset 0 0 5px 3px var(--password-shadow);
+	background-color: var(--password-background);
+	color: var(--password-shadow);
+	backdrop-filter: blur(100px);
+	transition: all .3s linear;
+}
+.content input:read-only,
+.content input:read-only:focus,
+.content input:read-only:active {
+	background-color: var(--password-background);
+	color: var(--password-shadow);
+	border: unset !important;
+	overflow: unset !important;
+	box-shadow: inset 0 0 5px 3px var(--password-shadow);
+	cursor: no-drop;
+}
+
+.content input:read-write:focus,
+.content input:read-write:active {
+	background-color: var(--password-background);
+	outline: none;
+	box-shadow: inset 0 0 5px 20px var(--password-shadow);
+}
+
+body.sun .content input {
+	box-shadow: inset 0 0 5px 3px var(--password-shadow-sun);
+	background-color: var(--password-background-sun);
+	color: var(--password-shadow-sun);
+}
+
+body.sun .content input:read-only,
+body.sun .content input:read-only:focus,
+body.sun .content input:read-only:active {
+	background-color: var(--password-background-sun);
+	color: var(--password-shadow-sun);
+	box-shadow: inset 0 0 5px 3px var(--password-shadow-sun);
+}
+
+body.sun .content input:read-write:focus,
+body.sun .content input:read-write:active {
+	background-color: var(--password-background-sun);
+	color: #6d744f !important;
+	box-shadow: inset 0 0 5px 20px var(--password-shadow-sun);
+}
+
+#addPassword .modal-content {
+	backdrop-filter: blur(10px);
+	background-color: var(--password-background);
+	box-shadow: inset 0 0 5px 3px var(--password-shadow),
+					0 0 5px 3px var(--password-shadow) !important;
+}
+
+body.sun #addPassword .modal-content {
+	backdrop-filter: blur(10px);
+	background-color: var(--password-background-sun);
+	box-shadow: inset 0 0 5px 3px var(--password-shadow-sun),
+					0 0 5px 3px var(--password-shadow-sun) !important;
+}
+
+body.sun #addPassword .modal-content input {
+	background-color: var(--password-background-sun);
+	color: #6d744f !important;
+}
+
+body.sun #addPassword .modal-content input:focus {
+	box-shadow: inset 0 0 5px 3px var(--password-shadow-sun);
+	border: var(--bs-border-width) solid var(--bs-border-color);
+}
+
+body.sun #addPassword .modal-content label::after {
+	background-color: transparent;
+}
+
+.footer {
+	position: fixed;
+	display: flex;
+	margin: 0 -5px;
+	bottom: 0;
+	justify-content: center;
+}
+
+.footer .contact {
+	flex: 1 1 auto;
+	margin: 0 5px;
+}
+
+@keyframes moon {
+	0% {
+		transform: rotate(0deg);
+		filter: drop-shadow(0 0 0.75rem var(--password-shadow))
+	}
+	25% {
+		transform: rotate(91deg);
+		filter: drop-shadow(0 0 1rem var(--password-shadow))
+	}
+	50% {
+		transform: rotate(182deg);
+		filter: drop-shadow(0 0 0rem var(--password-shadow))
+	}
+	75% {
+		transform: rotate(273deg);
+		filter: drop-shadow(0 0 0.75rem var(--password-shadow))
+	}
+	100% {
+		transform: rotate(360deg);
+		filter: drop-shadow(0 0 1rem var(--password-shadow))
+	}
+}
+
+@keyframes sun {
+	0% {
+		transform: rotate(0deg);
+		filter: drop-shadow(0 0 0.75rem var(--password-shadow-sun))
+	}
+	25% {
+		transform: rotate(91deg);
+		filter: drop-shadow(0 0 1rem var(--password-shadow-sun))
+	}
+	50% {
+		transform: rotate(182deg);
+		filter: drop-shadow(0 0 0rem var(--password-shadow-sun))
+	}
+	75% {
+		transform: rotate(273deg);
+		filter: drop-shadow(0 0 0.75rem var(--password-shadow-sun))
+	}
+	100% {
+		transform: rotate(360deg);
+		filter: drop-shadow(0 0 1rem var(--password-shadow-sun))
+	}
+}
