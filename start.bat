@@ -1,6 +1,7 @@
 @echo off
-echo "Please wait..."
 
-".env/Scripts/python" "main.py"
+echo "Приложение запускается..."
+
+python main.py
 
 pause
