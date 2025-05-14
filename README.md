@@ -1,13 +1,23 @@
-# moon-qwerty
+# MoonQwerty README
 
-## start in powershell:
-` .venv/Scripts/python.exe main.py `
+## Install all libs:
+```bash
+pip install -r requirements.txt
+```
+## Starting:
+  #### To start the application run the file ` start.bat ` or through the console ` main.py `:
+  ```bash
+  python main.py
+  ```
 
-## start in file:
-` start.bat `
+---
 
-## Libs:
-  ` pip install eel SimpleEncoder`
-
-[### SimpleEncoder pypi
-](https://pypi.org/project/SimpleEncoder/)
+## Установка всех библиотек:
+```bash
+pip install -r requirements.txt
+```
+## Запуск:
+  #### Чтобы запустить приложение запустите файл ` start.bat ` или через консоль ` main.py `:
+  ```bash
+  python main.py
+  ```
